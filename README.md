@@ -1,5 +1,7 @@
 # Event-Lens Frontend
 
+<img src="https://avatars.githubusercontent.com/u/63131539?s=60&v=4" width="50" height="50">
+
 ## Getting Started
 
 ### Development
