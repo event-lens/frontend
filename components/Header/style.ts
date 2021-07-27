@@ -1,11 +1,14 @@
-import { makeStyles } from "@material-ui/styles";
+import { styled } from "@material-ui/styles";
+import {
+  AppBar as AppBarMaterial,
+  Typography as TypographyMaterial,
+} from "@material-ui/core";
 import theme from "theme";
 
-export const useStyles = makeStyles(() => ({
-  appbar: {
-    backgroundColor: theme.colors.primary,
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
+export const AppBar = styled(AppBarMaterial)({
+  backgroundColor: theme.colors.primary,
+});
+
+export const Typography = styled(TypographyMaterial)({
+  flexGrow: 1,
+});

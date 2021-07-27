@@ -1,31 +1,29 @@
+import { useState } from "react";
 import { HeaderModel } from "models/Header";
-import { AppBar, Button, Toolbar, Typography } from "@material-ui/core";
+import { Button, Toolbar } from "@material-ui/core";
 import { Head } from "../Head";
 import { Menu } from "components/Menu";
-import { useStyles } from "./style";
+import { AppBar, Typography } from "./style";
 import Link from "next/link";
 
 const initialTitle = "Event Lens";
 
-export const Header = ({ title, description }: HeaderModel) => {
-  !title ? (title = initialTitle) : null;
-  !description ? (description = initialTitle) : null;
-  const isAuthenticated = false;
-
-  const classes = useStyles();
+export const Header = ({
+  title = initialTitle,
+  description = initialTitle,
+}: HeaderModel) => {
+  const [isAuth, setIsAuth] = useState(false);
 
   return (
     <>
       <Head title={title} description={description} />
-      <AppBar position="static" className={classes.appbar}>
+      <AppBar position="static">
         <Toolbar>
           <Menu />
-          <Typography variant="h5" className={classes.title}>
-            {title}
-          </Typography>
+          <Typography variant="h5">{title}</Typography>
           <Button color="inherit">
             <Link href="/home">
-              <a>{isAuthenticated ? "Inicia Sesión" : "Registrate"}</a>
+              <a>{isAuth ? "Inicia Sesión" : "Registrate"}</a>
             </Link>
           </Button>
         </Toolbar>
