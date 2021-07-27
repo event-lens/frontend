@@ -17,7 +17,7 @@ export const Header = ({ title, description }: HeaderModel) => {
   return (
     <>
       <Head title={title} description={description} />
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appbar}>
         <Toolbar>
           <Menu />
           <Typography variant="h5" className={classes.title}>
