@@ -7,6 +7,7 @@ export const Head = ({ title, description }: HeaderModel) => (
   <HeadNext>
     <title>{`${title} - Event Lens`}</title>
     <meta name="description" content={`${description}`} />
+    <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
     <link rel="icon" href="/favicon.ico" />
   </HeadNext>
 );
@@ -19,7 +20,7 @@ export const Header = ({ title, description }: HeaderModel) => {
     <>
       <Head title={title} description={description} />
       <header>
-        <h1>{description}</h1>
+        <h1>{title}</h1>
       </header>
     </>
   );
