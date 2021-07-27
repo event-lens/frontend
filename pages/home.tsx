@@ -1,9 +1,10 @@
+import { Header } from "components/Header";
 const Home = () => {
   return (
-    <div>
-      <h1>Hola Mundo</h1>
+    <>
+      <Header title="Inicio" />
       <p>Esto es una simulación</p>
-    </div>
+    </>
   );
 };
 
