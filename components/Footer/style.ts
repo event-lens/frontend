@@ -13,8 +13,10 @@ export const Nav = styled(BottomNavigation)({
 });
 
 export const NavButton = styled(BottomNavigationAction)({
-  color: theme.colors.primaryVariant,
+  color: "#ddd",
   "&.Mui-selected": {
     color: "#fff",
+    fontWeight: "bold",
+    fontSize: "1rem",
   },
 });
