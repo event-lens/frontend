@@ -7,7 +7,8 @@ const Footer = () => {
   const [value, setValue] = useState("/");
   const router = useRouter();
 
-  const handleChange = (event: ChangeEvent<{}>, newValue: string) => {
+  // event: ChangeEvent<{}>
+  const handleChange = (_: ChangeEvent<{}>, newValue: string) => {
     setValue(newValue);
     router.push(newValue);
   };
