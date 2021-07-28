@@ -1,18 +1,26 @@
-import { BottomNavigation, BottomNavigationAction } from "@material-ui/core";
-import { MdRecentActors, MdFavorite } from "react-icons/md";
+import { ChangeEvent, useState } from "react";
+import { MdHome, MdPerson, MdSettings } from "react-icons/md";
+import { useRouter } from "next/router";
+import { Nav, NavButton } from "./style";
 
 const Footer = () => {
+  const [value, setValue] = useState("/");
+  const router = useRouter();
+
+  const handleChange = (event: ChangeEvent<{}>, newValue: string) => {
+    setValue(newValue);
+    router.push(newValue);
+  };
   return (
-    <BottomNavigation>
-      <BottomNavigationAction
-        label="Recents"
-        value="recents"
-        icon={<MdFavorite />}
+    <Nav showLabels value={value} onChange={handleChange}>
+      <NavButton label="Inicio" value="/" icon={<MdHome />} />
+      <NavButton label="Perfil" value="/profile" icon={<MdPerson />} />
+      <NavButton
+        label="Configuracion"
+        value="/settings"
+        icon={<MdSettings />}
       />
-      <BottomNavigationAction label="Favorites" value="favorites" />
-      <BottomNavigationAction label="Nearby" value="nearby" />
-      <BottomNavigationAction label="Folder" value="folder" />
-    </BottomNavigation>
+    </Nav>
   );
 };
 
