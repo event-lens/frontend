@@ -1,9 +1,7 @@
-import { Header } from "components/Header";
 import Link from "next/link";
 const Home = () => {
   return (
     <>
-      <Header title="Home" />
       <p>Esto es una simulación</p>
       <Link href="/">
         <a>/</a>
@@ -13,3 +11,7 @@ const Home = () => {
 };
 
 export default Home;
+
+export const getStaticProps = () => {
+  return { props: { title: "Home" } };
+};
