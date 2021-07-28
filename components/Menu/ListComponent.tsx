@@ -1,31 +1,20 @@
-import { ReactComponentElement } from "react";
-import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
-import Link from "next/link";
-import { MdMenu } from "react-icons/md";
+import { MdMenu, MdPortrait } from "react-icons/md";
+import { List } from "@material-ui/core";
+import { ListItemComponent } from "./ListItemComponent";
+
+const list = [
+  { text: "inicio", href: "/", children: <MdMenu /> },
+  { text: "Acerca de", href: "/about", children: <MdPortrait /> },
+];
 
 export default function ListComponent() {
   return (
     <List>
-      <ListItemComponent text="Inicio" href="/">
-        <MdMenu />
-      </ListItemComponent>
+      {list.map((c) => (
+        <ListItemComponent key={c.href} {...c}>
+          {c.children}
+        </ListItemComponent>
+      ))}
     </List>
   );
 }
-
-type ListItemModel = {
-  children: ReactComponentElement<any>;
-  text: string;
-  href: string;
-};
-
-export const ListItemComponent = ({ children, text, href }: ListItemModel) => {
-  return (
-    <Link href={href} passHref>
-      <ListItem button component="a">
-        <ListItemIcon>{children}</ListItemIcon>
-        <ListItemText>{text}</ListItemText>
-      </ListItem>
-    </Link>
-  );
-};
