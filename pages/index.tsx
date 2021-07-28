@@ -1,11 +1,5 @@
-import { Header } from "components/Header";
-
-export default function Home({ title }: any) {
-  return (
-    <>
-      <Header title={title} />
-    </>
-  );
+export default function Home() {
+  return <>Hola</>;
 }
 
 export const getServerSideProps = async () => {
