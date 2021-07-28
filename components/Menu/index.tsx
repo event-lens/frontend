@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Drawer, IconButton, List } from "@material-ui/core";
+import { Drawer, IconButton } from "@material-ui/core";
 import { MdMenu } from "react-icons/md";
 import ListComponent from "./ListComponent";
 

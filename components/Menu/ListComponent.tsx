@@ -1,5 +1,5 @@
 import { MdMenu, MdPortrait } from "react-icons/md";
-import { List } from "@material-ui/core";
+import { List } from "./style";
 import { ListItemComponent } from "./ListItemComponent";
 
 const list = [
